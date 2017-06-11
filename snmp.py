@@ -9,7 +9,7 @@ from easysnmp import Session
 network = Network()
 def polling_routers(ipRouter):
 
-    session = Session(hostname=ipRouter, community=COMMUNITY, version=3)
+    session = Session(hostname=ipRouter, community=COMMUNITY, version=2)
     name = (session.get('SNMPv2-MIB::sysName.0'))
     router = network.getRouter(name.value)
     if router is None:
