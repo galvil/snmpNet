@@ -18,7 +18,7 @@ def polling_routers(ipRouter):
 
 def getInterfaces(ipRouter, rname=None):
     global network
-    session = Session(hostname=ipRouter, community=COMMUNITY, version=3)
+    session = Session(hostname=ipRouter, community=COMMUNITY, version=2)
     router = network.getRouter(rname);
     ipslist = (session.walk('RFC1213-MIB::ipAdEntAddr'))
 
