@@ -1,4 +1,4 @@
-
+#!/usr/bin/python
 class Interface:
     def __init__(self, name, ipAddress, mask, speed, cost):
 
