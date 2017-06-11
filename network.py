@@ -13,4 +13,11 @@ class Network():
             self.routers.remove(router)
         else print "Error: Router can not be removed because is not in the network"
 
-    
+    def getRouters(self):
+        return self.routers
+
+    def getRouter(self,router_name):
+        for router in self.routers:
+            if router.getName = router_name:
+                return router
+        return None

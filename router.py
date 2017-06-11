@@ -10,7 +10,7 @@ class Router:
     def rename(self,name):
         self.name = name
 
-    def getname(self):
+    def getName(self):
         return self.name
 
     def addInterface(self, interface):
