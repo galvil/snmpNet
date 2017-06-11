@@ -5,11 +5,16 @@ from router import Router
 from network import Network
 from easysnmp import Session
 
+
+network = Network()
 def polling_routers(ipRouter):
-    global network
-    session = Session(hostname=ipRouter, community=COMMUNITY, version=2)
+
+    session = Session(hostname=ipRouter, community=COMMUNITY, version=3)
     name = (session.get('SNMPv2-MIB::sysName.0'))
-    print name
+    router = network.getRouter(name.value)
+    if router is None:
+        router = Router(name.value)
+    print router.getName()
 
 def main():
     global COMMUNITY
